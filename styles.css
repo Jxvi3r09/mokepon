@@ -263,12 +263,16 @@ input {
   box-sizing: border-box;
   width: 130px;
   height: 40px;
-  background-color: chartreuse;
+  background-color: #0077b6;
   border: 2px solid black;
   border-radius: 20px;
   padding: 10px;
   margin: 10px;
   font-size: 20px;
+  cursor: pointer;
+}
+#boton-reiniciar:hover {
+  background-color: #00b4d8;
 }
 
 .ataques {
