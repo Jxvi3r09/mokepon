@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: "Pixelify Sans", sans-serif;
   background-image: url("assets/fondopokemon.jpg");
@@ -49,11 +53,16 @@ body {
   align-items: center;
   color: #03045e;
   flex-direction: column;
+  transition: transform 0.5s ease;
+}
+.tarjeta-de-mokepon:hover {
+  transform: scale(1.2); /* Aumenta el tamaño un 20% */
 }
 
 .tarjeta-de-mokepon img {
   width: 200px;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .tarjeta-de-mokepon p {
@@ -68,28 +77,165 @@ input {
   box-sizing: border-box;
   width: 130px;
   height: 40px;
-  background-color: chartreuse;
+  background-color: rgb(0, 71, 157);
   border: 2px solid black;
   border-radius: 20px;
   padding: 10px;
   margin: 10px;
   font-size: 20px;
+  cursor: pointer;
 }
-
+#boton-mascota:hover {
+  background-color: rgb(0, 71, 157, 0.5);
+}
 #seleccionar-ataque {
   flex-direction: column;
   align-items: center;
 }
 
-.boton-ataque {
-  background-color: chartreuse;
-  padding: 10px;
-  box-sizing: border-box;
-  border-radius: 20px;
-  width: 120px;
-  font-size: 20px;
+/*Edicion de los botones*/
+#boton-fuego {
+  padding: 8px 15px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background-color: #ff4500;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgb(225, 69, 0, 0.6);
+  transition: all 0.3s ease;
+}
+#boton-fuego:active {
+  animation: fuego 1s forwards;
+}
+@keyframes fuego {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba(255, 69, 0, 0.6), 0 0 10px rgba(255, 69, 0, 0.6),
+      0 0 15px rgba(255, 69, 0, 0.6);
+    background-color: #ff4500;
+    opacity: 1;
+  }
+  20% {
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(255, 69, 0, 0.8), 0 0 12px rgba(255, 69, 0, 0.7),
+      0 0 20px rgba(255, 69, 0, 0.5);
+    background-color: #ff6347;
+  }
+  40% {
+    transform: scale(1.2);
+    box-shadow: 0 0 12px rgba(255, 69, 0, 0.9), 0 0 20px rgba(255, 69, 0, 0.8),
+      0 0 30px rgba(255, 69, 0, 0.6);
+    background-color: #ff6347;
+  }
+  60% {
+    transform: scale(1.15);
+    box-shadow: 0 0 15px rgba(255, 69, 0, 1), 0 0 25px rgba(255, 69, 0, 0.9),
+      0 0 40px rgba(255, 69, 0, 0.8);
+    background-color: #ff4500;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.8), 0 0 15px rgba(255, 69, 0, 0.7),
+      0 0 20px rgba(255, 69, 0, 0.6);
+    background-color: #ff4500;
+    opacity: 1;
+  }
+}
+/*Boton agua*/
+#boton-agua {
+  position: relative;
+  padding: 5px 15px;
+  font-size: 18px;
+  border: 2px solid #0077b6;
+  border-radius: 8px;
+  background-color: #00b4d8;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 183, 216, 0.6);
+  transition: all 0.3s ease;
 }
 
+#boton-agua:active {
+  animation: onda-agua 0.6s forwards;
+}
+
+/* Animación de onda de agua */
+@keyframes onda-agua {
+  0% {
+    transform: scale(1);
+    background-color: #00b4d8;
+  }
+  50% {
+    transform: scale(1.1);
+    background-color: #0077b6;
+  }
+  100% {
+    transform: scale(1);
+    background-color: #00b4d8;
+  }
+}
+
+/*Boton tierra*/
+#boton-tierra {
+  position: relative;
+  padding: 5px 15px;
+  font-size: 18px;
+  border: 2px solid #8b4513;
+  border-radius: 8px;
+  background-color: #d2691e; /* Color tierra */
+  color: white;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(139, 69, 19, 0.5);
+  transition: all 0.3s ease;
+}
+
+#boton-tierra:active {
+  animation: terremoto 0.4s forwards;
+}
+
+/* Animación de terremoto o agrietamiento */
+@keyframes terremoto {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(5deg);
+  }
+  20% {
+    transform: rotate(-5deg);
+  }
+  30% {
+    transform: rotate(4deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+  60% {
+    transform: rotate(-3deg);
+  }
+  70% {
+    transform: rotate(2deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  90% {
+    transform: rotate(1deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 #resultado {
   width: 200px;
   background-color: rgb(189, 224, 254, 0.7);
@@ -101,7 +247,18 @@ input {
   font-size: 20px;
   color: #03045e;
 }
-
+#ataques-del-jugador {
+  color: white;
+}
+#ataques-del-enemigo {
+  color: white;
+}
+#vidas-jugador {
+  color: red;
+}
+#vidas-enemigo {
+  color: red;
+}
 #boton-reiniciar {
   box-sizing: border-box;
   width: 130px;
